@@ -11,6 +11,7 @@ public class ControllerMenu : MonoBehaviour
     public void SceneLoader(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+        //DontDestroyOnLoad(bgmSound);
     }
 
     public void tekanButtonPlay()

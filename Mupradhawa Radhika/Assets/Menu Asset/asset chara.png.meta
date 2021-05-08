@@ -1,0 +1,452 @@
+fileFormatVersion: 2
+guid: a004ae424c8938e489c618e6a3fa15b5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6803465444993168587
+    second: asset chara_0
+  - first:
+      213: 4820639582548482841
+    second: asset chara_1
+  - first:
+      213: 6492952374813054891
+    second: asset chara_2
+  - first:
+      213: 664909697845608648
+    second: asset chara_3
+  - first:
+      213: -5448833661045191049
+    second: asset chara_4
+  - first:
+      213: -6672463704200973401
+    second: asset chara_5
+  - first:
+      213: -1699066441399612412
+    second: asset chara_6
+  - first:
+      213: -124798124338728214
+    second: asset chara_7
+  - first:
+      213: 5787887781343598237
+    second: asset chara_8
+  - first:
+      213: -1425457603301801871
+    second: asset chara_9
+  - first:
+      213: -2891475156472773117
+    second: asset chara_10
+  - first:
+      213: -495797934987163575
+    second: asset chara_11
+  - first:
+      213: -6399765757643951269
+    second: asset chara_12
+  - first:
+      213: -8933221868285023278
+    second: asset chara_13
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: asset chara_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 291
+        width: 193
+        height: 189
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.03241451}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b898d593c3591a0800000000000000
+      internalID: -6803465444993168587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset chara_1
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 281
+        width: 176
+        height: 182
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b5df3d82a56e240800000000000000
+      internalID: 4820639582548482841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset chara_2
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 371
+        width: 166
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba7d244a8c99b1a50800000000000000
+      internalID: 6492952374813054891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset chara_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 204
+        width: 42
+        height: 58
+      alignment: 9
+      pivot: {x: 0.14931066, y: 0.90631527}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c0cccbe8db3a3900800000000000000
+      internalID: 664909697845608648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset chara_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 202
+        width: 38
+        height: 63
+      alignment: 9
+      pivot: {x: 0.732562, y: 0.92082673}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ec53987aad164b0800000000000000
+      internalID: -5448833661045191049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset chara_5
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 168
+        width: 85
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3f96efc95a663a0800000000000000
+      internalID: -6672463704200973401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset chara_6
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 175
+        width: 86
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40cc696d214bb68e0800000000000000
+      internalID: -1699066441399612412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset chara_7
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 202
+        width: 39
+        height: 65
+      alignment: 9
+      pivot: {x: 0.34893408, y: 0.802132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2b72264c0a44ef0800000000000000
+      internalID: -124798124338728214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset chara_8
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 199
+        width: 43
+        height: 60
+      alignment: 9
+      pivot: {x: 0.7511909, y: 0.81094414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d961fc68545b25050800000000000000
+      internalID: 5787887781343598237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset chara_9
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 0
+        width: 327
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17001d8bcd1c73ce0800000000000000
+      internalID: -1425457603301801871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset chara_10
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 145
+        width: 33
+        height: 34
+      alignment: 9
+      pivot: {x: 0.49999964, y: 0.9332042}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 306c2953aaa6fd7d0800000000000000
+      internalID: -2891475156472773117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset chara_11
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 145
+        width: 34
+        height: 35
+      alignment: 9
+      pivot: {x: 0.47111937, y: 0.8647173}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948c7bca7629e19f0800000000000000
+      internalID: -495797934987163575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset chara_12
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 145
+        width: 35
+        height: 36
+      alignment: 9
+      pivot: {x: 0.52805525, y: 0.71820664}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b537ce963f67f27a0800000000000000
+      internalID: -6399765757643951269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset chara_13
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 141
+        width: 35
+        height: 37
+      alignment: 9
+      pivot: {x: 0.52805525, y: 0.8715408}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dbae118a02d60480800000000000000
+      internalID: -8933221868285023278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

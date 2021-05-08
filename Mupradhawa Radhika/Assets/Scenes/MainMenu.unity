@@ -558,7 +558,7 @@ MonoBehaviour:
   settingWindow: {fileID: 0}
   hitButtonSound: {fileID: 438973544}
   backButtonSound: {fileID: 0}
-  bgmSound: {fileID: 0}
+  bgmSound: {fileID: 1210404748}
 --- !u!1 &105341570
 GameObject:
   m_ObjectHideFlags: 0
