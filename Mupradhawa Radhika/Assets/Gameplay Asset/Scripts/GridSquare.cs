@@ -57,6 +57,8 @@ public class GridSquare : MonoBehaviour
         {
             _correct = true;
             _displayedImage.sprite = _correctLetterData.image;
+
+
         }
 
         _selected = false;

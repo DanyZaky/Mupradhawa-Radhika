@@ -6,6 +6,7 @@ public class SearchingWrodsList : MonoBehaviour
 {
     public GameData currectGameData;
     public GameObject searhingWordPrefabs;
+    public GameObject buttonAttackDisable;
     public float offset = 0.0f;
     public int maxColumns = 5;
     public int maxRows = 4;

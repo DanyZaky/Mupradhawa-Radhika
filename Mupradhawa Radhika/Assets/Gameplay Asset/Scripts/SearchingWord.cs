@@ -8,6 +8,7 @@ public class SearchingWord : MonoBehaviour
     public Text displayedText;
     public Image crossLine;
 
+
     private string _word;
 
     void Start()
@@ -37,6 +38,7 @@ public class SearchingWord : MonoBehaviour
         if (word == _word)
         {
             crossLine.gameObject.SetActive(true);
+            
         }
     }
 }
