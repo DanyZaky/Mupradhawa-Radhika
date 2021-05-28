@@ -7,17 +7,21 @@ using UnityEngine.SceneManagement;
 public class Cutscene1Controller : MonoBehaviour
 {
     [SerializeField] private CanvasGroup[] CutScenes;
+    [SerializeField] private AudioSource[] AudioCutscenes;
     [SerializeField] private GameObject ButtonSkip, ButtonNext;
+    [SerializeField] private AudioSource HitAudio;
 
     private int counter = 0;
 
     void Start()
     {
         Fadein(counter);
+        AudioCutscenes[0].Play();
     }
 
     public void NextScene()
     {
+        HitAudio.Play();
         if (counter == 2)
         {
             FadeOut(0);
@@ -30,6 +34,7 @@ public class Cutscene1Controller : MonoBehaviour
             FadeOut(4);
             FadeOut(5);
         }
+        AudioCutscenes[counter].Stop();
         ++counter;
         if (counter > 5)
         {
@@ -37,6 +42,7 @@ public class Cutscene1Controller : MonoBehaviour
         }
         else
         {
+            AudioCutscenes[counter].Play();
             Fadein(counter);
         }
                
