@@ -8,7 +8,9 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private Sprite bgImage;
 
-    public GameObject finishedddd;
+    private AddButton addButton;
+
+    public GameObject finishedddd, puzzleField;
 
     public Sprite[] puzzles;
 
@@ -27,9 +29,15 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
+        addButton = this.GetComponent<AddButton>();
         puzzles = Resources.LoadAll<Sprite>("game ui");
     }
     void Start()
+    {
+        PuzzleInitialize();
+    }
+
+    void PuzzleInitialize()
     {
         GetButtons();
         AddListeners();
@@ -99,6 +107,8 @@ public class GameController : MonoBehaviour
     IEnumerator CheckIfPuzzleMatch()
     {
         yield return new WaitForSeconds(1f);
+        print(firstGuessPuzzle);
+        print(secondGuessPuzzle);
         if (firstGuessPuzzle == secondGuessPuzzle)
         {
             yield return new WaitForSeconds(.1f);
@@ -129,8 +139,7 @@ public class GameController : MonoBehaviour
         countCoreectGuesses++;
         if (countCoreectGuesses == gameGuesses)
         {
-            finishedddd.SetActive(true);
-            Debug.Log("ewekkkkkkkkkkkkk");
+            StartCoroutine(RespawnKartu());
             Debug.Log(countGuesses);
         }
     }
@@ -144,5 +153,22 @@ public class GameController : MonoBehaviour
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
         }
+    }
+
+    IEnumerator RespawnKartu()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            Destroy(puzzleField.transform.GetChild(i).gameObject);
+        }
+        buttonss.Clear();
+        gamePuzzles.Clear();
+        countGuesses = 0;
+        countCoreectGuesses = 0;
+        gameGuesses = 0;
+
+        yield return null;
+        addButton.SpawnKartu();
+        PuzzleInitialize();
     }
 }

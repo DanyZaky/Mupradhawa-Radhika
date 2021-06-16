@@ -13,6 +13,11 @@ public class AddButton : MonoBehaviour
     void Awake()
     {
         //buat spawn kartu
+        SpawnKartu();
+    }
+
+    public void SpawnKartu()
+    {
         for (int i = 0; i < 8; i++)
         {
             GameObject button = Instantiate(btn);
