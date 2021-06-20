@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 5888938}
   - component: {fileID: 5888937}
   - component: {fileID: 5888940}
+  - component: {fileID: 5888941}
   m_Layer: 5
   m_Name: Setting_Button On
   m_TagString: Untagged
@@ -247,6 +248,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1496963333}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: settingButtonAnim
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &5888938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +323,25 @@ MonoBehaviour:
   hitButtonSound: {fileID: 438973544}
   backButtonSound: {fileID: 614227007}
   bgmSound: {fileID: 0}
+--- !u!95 &5888941
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5888935}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ee71cde516aaf345b8e01f62d1573ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &41550351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,6 +2025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 796783491}
   - component: {fileID: 796783490}
+  - component: {fileID: 796783492}
   m_Layer: 0
   m_Name: game_logo
   m_TagString: Untagged
@@ -2066,6 +2098,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &796783492
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796783489}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08c60ea0353d09547973bc52f4c6ebb3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &815846615
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,6 +2130,7 @@ GameObject:
   - component: {fileID: 815846618}
   - component: {fileID: 815846617}
   - component: {fileID: 815846620}
+  - component: {fileID: 815846621}
   m_Layer: 5
   m_Name: Play_Button
   m_TagString: Untagged
@@ -2131,7 +2183,7 @@ MonoBehaviour:
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
+    m_FadeDuration: 1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -2223,6 +2275,25 @@ MonoBehaviour:
   hitButtonSound: {fileID: 438973544}
   backButtonSound: {fileID: 614227007}
   bgmSound: {fileID: 0}
+--- !u!95 &815846621
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815846615}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 930d7a6a9b494be4d8a2b87d7db8b678, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &853584559
 GameObject:
   m_ObjectHideFlags: 0
@@ -3676,6 +3747,7 @@ GameObject:
   - component: {fileID: 1496963330}
   - component: {fileID: 1496963329}
   - component: {fileID: 1496963328}
+  - component: {fileID: 1496963333}
   m_Layer: 5
   m_Name: Setting_Button Off
   m_TagString: Untagged
@@ -3796,6 +3868,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5888941}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: settingButtonAnim
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1496963330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3853,6 +3936,25 @@ RectTransform:
   m_AnchoredPosition: {x: -433.68, y: -251.68}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1496963333
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496963327}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 608c549260ddd8646a573392fe2210d6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1531893095
 GameObject:
   m_ObjectHideFlags: 0

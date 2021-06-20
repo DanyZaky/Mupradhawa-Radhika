@@ -4,11 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
-{
+{   
     [SerializeField]
     private Sprite bgImage;
 
+    //bar
+    public int maxHealthPlayer = 10;
+    public int currentHealthPlayer;
+    public PlayerHelathBar playerHealthBar;
+
+    public int maxHealthEnemy = 10;
+    public int currentHealthEnemy;
+    public EnemyHelathBar enemyHealthBar;
+    //akhir bar
+
     private AddButton addButton;
+    public PlayerController playerController;
 
     public GameObject finishedddd, puzzleField;
 
@@ -35,6 +46,12 @@ public class GameController : MonoBehaviour
     void Start()
     {
         PuzzleInitialize();
+
+        currentHealthEnemy = maxHealthEnemy;
+        enemyHealthBar.setMaxHealth(maxHealthEnemy);
+
+        currentHealthPlayer = maxHealthPlayer;
+        playerHealthBar.setMaxHealth(maxHealthPlayer);
     }
 
     void PuzzleInitialize()
@@ -139,7 +156,7 @@ public class GameController : MonoBehaviour
         countCoreectGuesses++;
         if (countCoreectGuesses == gameGuesses)
         {
-            StartCoroutine(RespawnKartu());
+            StartCoroutine(AnimasiPlayer());
             Debug.Log(countGuesses);
         }
     }
@@ -152,12 +169,13 @@ public class GameController : MonoBehaviour
             int randomIndex = Random.Range(0, list.Count);
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
+            
         }
     }
 
     IEnumerator RespawnKartu()
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 4; i++)
         {
             Destroy(puzzleField.transform.GetChild(i).gameObject);
         }
@@ -170,5 +188,38 @@ public class GameController : MonoBehaviour
         yield return null;
         addButton.SpawnKartu();
         PuzzleInitialize();
+    }
+
+    IEnumerator AnimasiPlayer()
+    {
+        playerController.animasiJalan();
+
+        yield return new WaitForSeconds(2f);
+
+        take_BasicAttackDamage_Enemy(2);
+
+        yield return new WaitForSeconds(1f);
+
+        take_BasicAttackDamage_Player(2);
+
+        yield return new WaitForSeconds(.1f);
+
+        playerController.animasiIdle();
+
+        StartCoroutine(RespawnKartu());
+    }
+
+    void take_BasicAttackDamage_Enemy(int damage)
+    {
+        currentHealthEnemy -= damage;
+
+        enemyHealthBar.setHealth(currentHealthEnemy);
+    }
+
+    void take_BasicAttackDamage_Player(int damage)
+    {
+        currentHealthPlayer -= damage;
+
+        playerHealthBar.setHealth(currentHealthPlayer);
     }
 }

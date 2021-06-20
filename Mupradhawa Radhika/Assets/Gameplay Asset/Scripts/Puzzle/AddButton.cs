@@ -18,7 +18,7 @@ public class AddButton : MonoBehaviour
 
     public void SpawnKartu()
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 4; i++)
         {
             GameObject button = Instantiate(btn);
             button.name = "" + i;
