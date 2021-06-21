@@ -13,7 +13,7 @@ public class AddButton : MonoBehaviour
     void Awake()
     {
         //buat spawn kartu
-        SpawnKartu();
+        //SpawnKartu();
     }
 
     public void SpawnKartu()

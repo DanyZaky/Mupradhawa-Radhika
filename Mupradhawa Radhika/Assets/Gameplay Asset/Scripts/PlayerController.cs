@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     float ms;
 
-    void Start()
+    void Awake()
     {
         anim = GetComponent<Animator>();
     }
@@ -29,8 +29,8 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isAttackPlayer", false);
     }
 
-    public void animasiBasicAttack()
+    public void animasiBasicAttack(bool value)
     {
-        anim.SetBool("isAttackPlayer", true);
+        anim.SetBool("isAttackPlayer", value);
     }
 }

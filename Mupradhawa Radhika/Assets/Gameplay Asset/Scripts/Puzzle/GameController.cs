@@ -29,6 +29,8 @@ public class GameController : MonoBehaviour
 
     public List<Button> buttonss = new List<Button>();
 
+    public GameObject[] Enemies;
+
     private bool firstGuess, secondGuess;
 
     private int countGuesses;
@@ -56,6 +58,7 @@ public class GameController : MonoBehaviour
 
     void PuzzleInitialize()
     {
+        addButton.SpawnKartu();
         GetButtons();
         AddListeners();
         AddGamePuzzles();
@@ -126,7 +129,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         print(firstGuessPuzzle);
         print(secondGuessPuzzle);
-        if (firstGuessPuzzle == secondGuessPuzzle)
+        if ((buttonss[firstGuessIndex].name != buttonss[secondGuessIndex].name) && (firstGuessPuzzle == secondGuessPuzzle))
         {
             yield return new WaitForSeconds(.1f);
 
@@ -136,7 +139,7 @@ public class GameController : MonoBehaviour
             buttonss[firstGuessIndex].image.color = new Color(0, 0, 0, 0);
             buttonss[secondGuessIndex].image.color = new Color(0, 0, 0, 0);
 
-            CheckIfTheGameIsFinished();
+            CheckIfTheGameIsFinished();            
         }
         else
         {
@@ -186,25 +189,21 @@ public class GameController : MonoBehaviour
         gameGuesses = 0;
 
         yield return null;
-        addButton.SpawnKartu();
+        
         PuzzleInitialize();
     }
 
     IEnumerator AnimasiPlayer()
     {
-        playerController.animasiJalan();
+        playerController.animasiBasicAttack(true);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.6f);
 
         take_BasicAttackDamage_Enemy(2);
 
         yield return new WaitForSeconds(1f);
 
-        take_BasicAttackDamage_Player(2);
-
-        yield return new WaitForSeconds(.1f);
-
-        playerController.animasiIdle();
+        playerController.animasiBasicAttack(false);
 
         StartCoroutine(RespawnKartu());
     }
