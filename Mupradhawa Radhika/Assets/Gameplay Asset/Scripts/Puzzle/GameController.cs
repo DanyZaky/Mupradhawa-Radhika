@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private Sprite bgImage;
 
+    public Animator camShakeAnim;
+
     //bar
     public int maxHealthPlayer = 10;
     public int currentHealthPlayer;
@@ -20,6 +22,7 @@ public class GameController : MonoBehaviour
 
     private AddButton addButton;
     public PlayerController playerController;
+    public Enemy1Controller enemy1Controller;
 
     public GameObject finishedddd, puzzleField;
 
@@ -199,16 +202,27 @@ public class GameController : MonoBehaviour
 
         yield return new WaitForSeconds(1.6f);
 
-        take_BasicAttackDamage_Enemy(2);
+        take_BasicAttackDamage_Enemy1(2);
+        camShakeAnim.SetTrigger("shake");
 
         yield return new WaitForSeconds(1f);
 
         playerController.animasiBasicAttack(false);
+        enemy1Controller.animasiBasicAttack(true);
+
+        yield return new WaitForSeconds(1.6f);
+
+        take_BasicAttackDamage_Player(2);
+        camShakeAnim.SetTrigger("shake");
+
+        yield return new WaitForSeconds(1f);
+
+        enemy1Controller.animasiBasicAttack(false);
 
         StartCoroutine(RespawnKartu());
     }
 
-    void take_BasicAttackDamage_Enemy(int damage)
+    void take_BasicAttackDamage_Enemy1(int damage)
     {
         currentHealthEnemy -= damage;
 

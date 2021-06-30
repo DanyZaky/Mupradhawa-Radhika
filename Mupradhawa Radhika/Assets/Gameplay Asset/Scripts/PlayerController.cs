@@ -6,8 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     Animator anim;
 
-    float ms;
-
     void Awake()
     {
         anim = GetComponent<Animator>();
