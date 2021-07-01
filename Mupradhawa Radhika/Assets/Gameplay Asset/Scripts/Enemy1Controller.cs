@@ -2,23 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy1Controller : MonoBehaviour
+public class Enemy1Controller : UnitBase
 {
     Animator anim;
 
     void Awake()
     {
+        Initiate();
         anim = GetComponent<Animator>();
-    }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void animasiBasicAttack(bool value)

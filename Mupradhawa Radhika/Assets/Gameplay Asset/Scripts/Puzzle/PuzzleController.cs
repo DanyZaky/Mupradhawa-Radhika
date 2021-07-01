@@ -3,26 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameController : MonoBehaviour
+public class PuzzleController : MonoBehaviour
 {   
     [SerializeField]
     private Sprite bgImage;
 
-    public Animator camShakeAnim;
-
-    //bar
-    public int maxHealthPlayer = 10;
-    public int currentHealthPlayer;
-    public PlayerHelathBar playerHealthBar;
-
-    public int maxHealthEnemy = 10;
-    public int currentHealthEnemy;
-    public EnemyHelathBar enemyHealthBar;
-    //akhir bar
-
     private AddButton addButton;
-    public PlayerController playerController;
-    public Enemy1Controller enemy1Controller;
 
     public GameObject finishedddd, puzzleField;
 
@@ -31,8 +17,6 @@ public class GameController : MonoBehaviour
     public List<Sprite> gamePuzzles = new List<Sprite>();
 
     public List<Button> buttonss = new List<Button>();
-
-    public GameObject[] Enemies;
 
     private bool firstGuess, secondGuess;
 
@@ -43,6 +27,8 @@ public class GameController : MonoBehaviour
     private int firstGuessIndex, secondGuessIndex;
     private string firstGuessPuzzle, secondGuessPuzzle;
 
+    public BattleController bc;
+
     void Awake()
     {
         addButton = this.GetComponent<AddButton>();
@@ -50,13 +36,7 @@ public class GameController : MonoBehaviour
     }
     void Start()
     {
-        PuzzleInitialize();
-
-        currentHealthEnemy = maxHealthEnemy;
-        enemyHealthBar.setMaxHealth(maxHealthEnemy);
-
-        currentHealthPlayer = maxHealthPlayer;
-        playerHealthBar.setMaxHealth(maxHealthPlayer);
+        PuzzleInitialize();        
     }
 
     void PuzzleInitialize()
@@ -162,7 +142,7 @@ public class GameController : MonoBehaviour
         countCoreectGuesses++;
         if (countCoreectGuesses == gameGuesses)
         {
-            StartCoroutine(AnimasiPlayer());
+            StartCoroutine(bc.PlayerAttack());
             Debug.Log(countGuesses);
         }
     }
@@ -179,7 +159,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    IEnumerator RespawnKartu()
+    public IEnumerator RespawnKartu()
     {
         for (int i = 0; i < 4; i++)
         {
@@ -194,45 +174,5 @@ public class GameController : MonoBehaviour
         yield return null;
         
         PuzzleInitialize();
-    }
-
-    IEnumerator AnimasiPlayer()
-    {
-        playerController.animasiBasicAttack(true);
-
-        yield return new WaitForSeconds(1.6f);
-
-        take_BasicAttackDamage_Enemy1(2);
-        camShakeAnim.SetTrigger("shake");
-
-        yield return new WaitForSeconds(1f);
-
-        playerController.animasiBasicAttack(false);
-        enemy1Controller.animasiBasicAttack(true);
-
-        yield return new WaitForSeconds(1.6f);
-
-        take_BasicAttackDamage_Player(2);
-        camShakeAnim.SetTrigger("shake");
-
-        yield return new WaitForSeconds(1f);
-
-        enemy1Controller.animasiBasicAttack(false);
-
-        StartCoroutine(RespawnKartu());
-    }
-
-    void take_BasicAttackDamage_Enemy1(int damage)
-    {
-        currentHealthEnemy -= damage;
-
-        enemyHealthBar.setHealth(currentHealthEnemy);
-    }
-
-    void take_BasicAttackDamage_Player(int damage)
-    {
-        currentHealthPlayer -= damage;
-
-        playerHealthBar.setHealth(currentHealthPlayer);
     }
 }

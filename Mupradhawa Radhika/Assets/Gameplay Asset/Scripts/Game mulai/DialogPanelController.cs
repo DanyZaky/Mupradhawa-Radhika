@@ -8,8 +8,14 @@ public class DialogPanelController : MonoBehaviour
     [SerializeField] private GameObject DisAttButt, GameUI;
     [SerializeField] private AudioSource HitButton;
 
+    private BattleController bc;
     private int counter = 0;
- 
+
+    private void Awake()
+    {
+        bc = GetComponent<BattleController>();
+    }
+
     void Start()
     {
         DialogWindows[counter].SetActive(true);
@@ -33,6 +39,7 @@ public class DialogPanelController : MonoBehaviour
             DisAttButt.SetActive(false);
             //WordGrid.SetActive(true);
             GameUI.SetActive(true);
+            bc.BattleStart();
             print("Done");
         }
         

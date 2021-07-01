@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : UnitBase
 {
     Animator anim;
 
     void Awake()
     {
+        Initiate();
         anim = GetComponent<Animator>();
     }
 

@@ -8,27 +8,44 @@ public class CoolDownBar : MonoBehaviour
     public Slider timerSlider;
     public float gameTime;
 
-    private bool stopTimer;
+    private BattleController bc;
+    private bool stopTimer = true;
+    private bool isEnemyAttack = false;
 
-    void Start()
+    private void Awake()
+    {
+        bc = GetComponent<BattleController>();
+    }
+
+    public void InitiateCooldownBar()
     {
         stopTimer = false;
+        isEnemyAttack = false;
         timerSlider.maxValue = gameTime;
         timerSlider.value = gameTime;
     }
 
+    public void StartEnemyAttack()
+    {
+        StartCoroutine(bc.EnemyAttack());
+    }
+
     void Update()
     {
-        float time = gameTime - Time.time;
+        if (stopTimer == false)
+        {
+            timerSlider.value -= Time.deltaTime;
+        }
 
-        if(time <= 0)
+        if (timerSlider.value <= 0)
         {
             stopTimer = true;
-        }
-        if(stopTimer == false)
-        {
-            timerSlider.value = time;
-        }
-        
+
+            if (!isEnemyAttack)
+            {
+                isEnemyAttack = true;
+                StartEnemyAttack();
+            }
+        }        
     }
 }

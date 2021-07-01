@@ -436,7 +436,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1190313658}
+      - m_Target: {fileID: 684271809}
         m_MethodName: NextDialog
         m_Mode: 1
         m_Arguments:
@@ -1193,6 +1193,93 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &684271805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 684271807}
+  - component: {fileID: 684271806}
+  - component: {fileID: 684271808}
+  - component: {fileID: 684271809}
+  m_Layer: 0
+  m_Name: BattleController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &684271806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684271805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b022613dca7a42449fb2b512245a846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleController: {fileID: 1576307681}
+  camShakeAnim: {fileID: 519420030}
+  playerHealthBar: {fileID: 888767317}
+  enemyHealthBar: {fileID: 654166297}
+  player: {fileID: 866042612}
+  currentEnemy: {fileID: 829884112}
+  enemyList: []
+  isBattleStart: 0
+--- !u!4 &684271807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684271805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &684271808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684271805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6521fa4fb5ce4d4db7506258f3a553d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerSlider: {fileID: 2076925073}
+  gameTime: 5
+--- !u!114 &684271809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684271805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e12e48b6139914da02ca9b6492276e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogWindows:
+  - {fileID: 1757811755}
+  - {fileID: 105295627}
+  - {fileID: 1803980465}
+  - {fileID: 1629187187}
+  DisAttButt: {fileID: 1190926626}
+  GameUI: {fileID: 191049177}
+  HitButton: {fileID: 334191315}
 --- !u!1 &692474996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,6 +1900,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0927290fe74b64995b328ee5682baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameUnit: 
+  maxHP: 100
+  currentHP: 0
+  maxSHD: 100
+  currentSHD: 0
+  baseDMG: 20
+  minDMG: 0
+  maxDMG: 0
 --- !u!1 &837673524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,6 +2247,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23456feb3b9ac546851683865fd370d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameUnit: 
+  maxHP: 100
+  currentHP: 0
+  maxSHD: 100
+  currentSHD: 0
+  baseDMG: 20
+  minDMG: 0
+  maxDMG: 0
 --- !u!212 &866042613
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7329,7 +7432,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1069976619
 GameObject:
@@ -7795,7 +7898,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1190313657}
-  - component: {fileID: 1190313658}
   m_Layer: 5
   m_Name: DialogPanel
   m_TagString: Untagged
@@ -7826,26 +7928,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.001069, y: 0.00097179005}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1190313658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190313656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22e12e48b6139914da02ca9b6492276e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DialogWindows:
-  - {fileID: 1757811755}
-  - {fileID: 105295627}
-  - {fileID: 1803980465}
-  - {fileID: 1629187187}
-  DisAttButt: {fileID: 1190926626}
-  GameUI: {fileID: 191049177}
-  HitButton: {fileID: 334191315}
 --- !u!1 &1190926626
 GameObject:
   m_ObjectHideFlags: 0
@@ -8270,7 +8352,6 @@ GameObject:
   - component: {fileID: 1576307680}
   - component: {fileID: 1576307679}
   - component: {fileID: 1576307681}
-  - component: {fileID: 1576307682}
   m_Layer: 0
   m_Name: PuzzleController
   m_TagString: Untagged
@@ -8320,38 +8401,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgImage: {fileID: -8061304531003732180, guid: e82f8d643b97fe94f86854be6034d5f5,
     type: 3}
-  camShakeAnim: {fileID: 519420030}
-  maxHealthPlayer: 10
-  currentHealthPlayer: 0
-  playerHealthBar: {fileID: 888767317}
-  maxHealthEnemy: 10
-  currentHealthEnemy: 0
-  enemyHealthBar: {fileID: 654166297}
-  playerController: {fileID: 866042612}
-  enemy1Controller: {fileID: 829884112}
   finishedddd: {fileID: 81861125}
   puzzleField: {fileID: 765563304}
   puzzles: []
   gamePuzzles: []
   buttonss: []
-  Enemies:
-  - {fileID: 829884109}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!114 &1576307682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576307678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6521fa4fb5ce4d4db7506258f3a553d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerSlider: {fileID: 2076925073}
-  gameTime: 10
+  bc: {fileID: 684271806}
 --- !u!1 &1629187187
 GameObject:
   m_ObjectHideFlags: 0
@@ -8433,7 +8488,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1190313658}
+      - m_Target: {fileID: 684271809}
         m_MethodName: NextDialog
         m_Mode: 1
         m_Arguments:
@@ -8763,7 +8818,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1190313658}
+      - m_Target: {fileID: 684271809}
         m_MethodName: NextDialog
         m_Mode: 1
         m_Arguments:
@@ -8892,7 +8947,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1190313658}
+      - m_Target: {fileID: 684271809}
         m_MethodName: NextDialog
         m_Mode: 1
         m_Arguments:

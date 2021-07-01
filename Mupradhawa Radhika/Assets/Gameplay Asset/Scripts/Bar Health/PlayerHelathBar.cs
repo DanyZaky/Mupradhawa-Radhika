@@ -9,14 +9,14 @@ public class PlayerHelathBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
-    public void setMaxHealth(int health)
+    public void setMaxHealth(float health)
     {
         slider.maxValue = health;
         slider.value = health;
 
         fill.color = gradient.Evaluate(1f);
     }
-    public void setHealth(int health)
+    public void setHealth(float health)
     {
         slider.value = health;
 
