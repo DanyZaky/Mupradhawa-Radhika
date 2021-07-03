@@ -40,7 +40,6 @@ public class DialogPanelController : MonoBehaviour
             //WordGrid.SetActive(true);
             GameUI.SetActive(true);
             bc.BattleStart();
-            print("Done");
         }
         
     }

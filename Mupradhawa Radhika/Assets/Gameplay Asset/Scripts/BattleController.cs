@@ -14,7 +14,9 @@ public class BattleController : MonoBehaviour
 
     private CoolDownBar cdBar;
 
+    public bool isEnemyAttackPaused = false;
     public bool isBattleStart = false;
+    public string battleState = "Idle";
 
     public void Awake()
     {
@@ -27,8 +29,19 @@ public class BattleController : MonoBehaviour
         playerHealthBar.setMaxHealth(player.maxHP);
     }
 
+    private void Update()
+    {
+        
+    }
+
     public IEnumerator PlayerAttack()
     {
+        yield return new WaitUntil(() => battleState == "Idle");
+
+        isEnemyAttackPaused = true;
+
+        battleState = "Player";
+
         player.animasiBasicAttack(true);
 
         yield return new WaitForSeconds(1.6f);
@@ -39,12 +52,18 @@ public class BattleController : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         player.animasiBasicAttack(false);
-        
+
+        isEnemyAttackPaused = false;
+        battleState = "Idle";
         StartCoroutine(puzzleController.RespawnKartu());
     }
 
     public IEnumerator EnemyAttack()
     {
+        yield return new WaitUntil(() => battleState == "Idle");
+
+        battleState = "Enemy";
+
         currentEnemy.animasiBasicAttack(true);
 
         yield return new WaitForSeconds(1.6f);
@@ -55,6 +74,8 @@ public class BattleController : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         currentEnemy.animasiBasicAttack(false);
+
+        battleState = "Idle";
         cdBar.InitiateCooldownBar();
     }
 
@@ -81,6 +102,7 @@ public class BattleController : MonoBehaviour
     public void BattleStart()
     {
         isBattleStart = true;
+        print(isEnemyAttackPaused);
         cdBar.InitiateCooldownBar();
     }
 }

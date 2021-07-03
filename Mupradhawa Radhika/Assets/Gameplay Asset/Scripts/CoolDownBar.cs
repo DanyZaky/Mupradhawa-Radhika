@@ -32,9 +32,14 @@ public class CoolDownBar : MonoBehaviour
 
     void Update()
     {
-        if (stopTimer == false)
+        if (stopTimer == false && bc.isEnemyAttackPaused == false)
         {
             timerSlider.value -= Time.deltaTime;
+        }
+        else
+        {
+            print(stopTimer);
+            print(bc.isEnemyAttackPaused);
         }
 
         if (timerSlider.value <= 0)

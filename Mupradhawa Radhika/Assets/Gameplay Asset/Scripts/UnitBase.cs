@@ -19,7 +19,6 @@ public class UnitBase : MonoBehaviour
     public void Initiate()
     {
         currentHP = maxHP;
-        print("P" + currentHP);
         minDMG = baseDMG - (baseDMG * (1 / 5));
         maxDMG = baseDMG + (baseDMG * (1 / 5));
     }
