@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class CoolDownBar : MonoBehaviour
 {
     public Slider timerSlider;
-    public float gameTime;
+    public int IndexCdCurrentEnemy;
+    public float[] CdEnemy;
 
     private BattleController bc;
     private bool stopTimer = true;
@@ -17,29 +18,11 @@ public class CoolDownBar : MonoBehaviour
         bc = GetComponent<BattleController>();
     }
 
-    public void InitiateCooldownBar()
-    {
-        stopTimer = false;
-        isEnemyAttack = false;
-        timerSlider.maxValue = gameTime;
-        timerSlider.value = gameTime;
-    }
-
-    public void StartEnemyAttack()
-    {
-        StartCoroutine(bc.EnemyAttack());
-    }
-
     void Update()
     {
         if (stopTimer == false && bc.isEnemyAttackPaused == false)
         {
             timerSlider.value -= Time.deltaTime;
-        }
-        else
-        {
-            print(stopTimer);
-            print(bc.isEnemyAttackPaused);
         }
 
         if (timerSlider.value <= 0)
@@ -49,8 +32,16 @@ public class CoolDownBar : MonoBehaviour
             if (!isEnemyAttack)
             {
                 isEnemyAttack = true;
-                StartEnemyAttack();
+                bc.StartEnemyAttack();
             }
-        }        
+        }
     }
+
+    public void InitiateCooldownBar()
+    {
+        stopTimer = false;
+        isEnemyAttack = false;
+        timerSlider.maxValue = CdEnemy[IndexCdCurrentEnemy];
+        timerSlider.value = CdEnemy[IndexCdCurrentEnemy];
+    }   
 }

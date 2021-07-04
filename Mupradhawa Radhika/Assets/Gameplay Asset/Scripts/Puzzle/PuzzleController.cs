@@ -109,9 +109,8 @@ public class PuzzleController : MonoBehaviour
 
     IEnumerator CheckIfPuzzleMatch()
     {
-        yield return new WaitForSeconds(.5f);
-        print(firstGuessPuzzle);
-        print(secondGuessPuzzle);
+        yield return new WaitForSeconds(.4f);
+        
         if ((buttonss[firstGuessIndex].name != buttonss[secondGuessIndex].name) && (firstGuessPuzzle == secondGuessPuzzle))
         {
             yield return new WaitForSeconds(.1f);
@@ -142,8 +141,7 @@ public class PuzzleController : MonoBehaviour
         countCoreectGuesses++;
         if (countCoreectGuesses == gameGuesses)
         {
-            StartCoroutine(bc.PlayerAttack());
-            Debug.Log(countGuesses);
+            bc.StartPlayerAttack();
         }
     }
 

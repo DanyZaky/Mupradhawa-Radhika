@@ -1231,7 +1231,10 @@ MonoBehaviour:
   player: {fileID: 866042612}
   currentEnemy: {fileID: 829884112}
   enemyList: []
+  cdBar: {fileID: 0}
+  isEnemyAttackPaused: 0
   isBattleStart: 0
+  battleState: Idle
 --- !u!4 &684271807
 Transform:
   m_ObjectHideFlags: 0
@@ -1259,7 +1262,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerSlider: {fileID: 2076925073}
-  gameTime: 5
+  IndexCdCurrentEnemy: 0
+  CdEnemy:
+  - 10
+  - 0
+  - 0
 --- !u!114 &684271809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1900,6 +1907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0927290fe74b64995b328ee5682baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bc: {fileID: 684271806}
   nameUnit: 
   maxHP: 100
   currentHP: 0
@@ -2247,6 +2255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23456feb3b9ac546851683865fd370d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bc: {fileID: 684271806}
   nameUnit: 
   maxHP: 100
   currentHP: 0
