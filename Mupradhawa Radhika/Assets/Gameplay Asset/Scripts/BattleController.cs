@@ -12,7 +12,7 @@ public class BattleController : MonoBehaviour
     public Enemy1Controller currentEnemy;
     public Enemy1Controller[] enemyList;
 
-    [HideInInspector] public CoolDownBar cdBar;
+    private CoolDownBar cdBar;
 
     public bool isEnemyAttackPaused = false;
     public bool isBattleStart = false;
@@ -34,31 +34,59 @@ public class BattleController : MonoBehaviour
         
     }
 
-    public void StartPlayerAttack()
+    public IEnumerator PlayerAttack()
     {
-        if (cdBar.timerSlider.value >= cdBar.timerSlider.maxValue / 2)
-        {
-            StartCoroutine(player.PlayerSpecialAttack(player.maxDMG));
-        }
-        else
-        {
-            StartCoroutine(player.PlayerBasicAttack());
-        }        
+        yield return new WaitUntil(() => battleState == "Idle");
+
+        isEnemyAttackPaused = true;
+
+        battleState = "Player";
+
+        player.animasiBasicAttack(true);
+
+        yield return new WaitForSeconds(1.6f);
+
+        take_BasicAttackDamage_Enemy1(player.baseDMG);
+        camShakeAnim.SetTrigger("shake");
+
+        yield return new WaitForSeconds(1f);
+
+        player.animasiBasicAttack(false);
+
+        isEnemyAttackPaused = false;
+        battleState = "Idle";
+        StartCoroutine(puzzleController.RespawnKartu());
     }
 
-    public void StartEnemyAttack()
+    public IEnumerator EnemyAttack()
     {
-        StartCoroutine(currentEnemy.EnemyBasicAttack());
+        yield return new WaitUntil(() => battleState == "Idle");
+
+        battleState = "Enemy";
+
+        currentEnemy.animasiBasicAttack(true);
+
+        yield return new WaitForSeconds(1.6f);
+
+        take_BasicAttackDamage_Player(currentEnemy.baseDMG);
+        camShakeAnim.SetTrigger("shake");
+
+        yield return new WaitForSeconds(1f);
+
+        currentEnemy.animasiBasicAttack(false);
+
+        battleState = "Idle";
+        cdBar.InitiateCooldownBar();
     }
 
-    public void take_BasicAttackDamage_Enemy1(float damage)
+    void take_BasicAttackDamage_Enemy1(float damage)
     {
         currentEnemy.DealDamage(damage);
 
         updateHealthBar();
     }
 
-    public void take_BasicAttackDamage_Player(float damage)
+    void take_BasicAttackDamage_Player(float damage)
     {
         player.DealDamage(damage);
 
@@ -74,6 +102,7 @@ public class BattleController : MonoBehaviour
     public void BattleStart()
     {
         isBattleStart = true;
+        print(isEnemyAttackPaused);
         cdBar.InitiateCooldownBar();
     }
 }
