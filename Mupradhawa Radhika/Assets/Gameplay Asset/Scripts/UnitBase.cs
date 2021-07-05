@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class UnitBase : MonoBehaviour
 {
-    [SerializeField] protected BattleController bc;
-
     public string nameUnit;
 
     public float maxHP = 100;
@@ -21,8 +19,8 @@ public class UnitBase : MonoBehaviour
     public void Initiate()
     {
         currentHP = maxHP;
-        minDMG = (float)(0.5 * baseDMG);
-        maxDMG = (float)(2 * baseDMG);
+        minDMG = baseDMG - (baseDMG * (1 / 5));
+        maxDMG = baseDMG + (baseDMG * (1 / 5));
     }
 
     public void DealDamage(float amount)
