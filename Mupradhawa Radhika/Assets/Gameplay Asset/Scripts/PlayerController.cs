@@ -28,8 +28,51 @@ public class PlayerController : UnitBase
         anim.SetBool("isAttackPlayer", false);
     }
 
-    public void animasiBasicAttack(bool value)
+    public IEnumerator PlayerBasicAttack()
     {
-        anim.SetBool("isAttackPlayer", value);
+        yield return new WaitUntil(() => bc.battleState == "Idle");
+
+        bc.isEnemyAttackPaused = true;
+
+        bc.battleState = "Player";
+
+        anim.SetBool("isAttackPlayer", true);
+
+        yield return new WaitForSeconds(1.6f);
+
+        bc.take_BasicAttackDamage_Enemy1(baseDMG);
+        bc.camShakeAnim.SetTrigger("shake");
+
+        yield return new WaitForSeconds(1f);
+
+        anim.SetBool("isAttackPlayer", false);
+
+        bc.isEnemyAttackPaused = false;
+        bc.battleState = "Idle";
+        StartCoroutine(bc.puzzleController.RespawnKartu());
+    }
+
+    public IEnumerator PlayerSpecialAttack(float dmg)
+    {
+        yield return new WaitUntil(() => bc.battleState == "Idle");
+
+        bc.isEnemyAttackPaused = true;
+
+        bc.battleState = "Player";
+
+        anim.SetBool("isAttackPlayer", true);
+
+        yield return new WaitForSeconds(1.6f);
+
+        bc.take_BasicAttackDamage_Enemy1(dmg);
+        bc.camShakeAnim.SetTrigger("shake");
+
+        yield return new WaitForSeconds(1f);
+
+        anim.SetBool("isAttackPlayer", false);
+
+        bc.isEnemyAttackPaused = false;
+        bc.battleState = "Idle";
+        StartCoroutine(bc.puzzleController.RespawnKartu());
     }
 }

@@ -1397,6 +1397,10 @@ MonoBehaviour:
   player: {fileID: 866042612}
   currentEnemy: {fileID: 829884112}
   enemyList: []
+<<<<<<< HEAD
+=======
+  cdBar: {fileID: 0}
+>>>>>>> 83d721d788a266a54989f808b1e1898646290f3f
   isEnemyAttackPaused: 0
   isBattleStart: 0
   battleState: Idle
@@ -1427,6 +1431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerSlider: {fileID: 2076925073}
+<<<<<<< HEAD
   gameTime: 5
   gradient:
     serializedVersion: 2
@@ -1458,6 +1463,13 @@ MonoBehaviour:
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   fill: {fileID: 695841607}
+=======
+  IndexCdCurrentEnemy: 0
+  CdEnemy:
+  - 10
+  - 0
+  - 0
+>>>>>>> 83d721d788a266a54989f808b1e1898646290f3f
 --- !u!114 &684271809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2172,6 +2184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0927290fe74b64995b328ee5682baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bc: {fileID: 684271806}
   nameUnit: 
   maxHP: 100
   currentHP: 0
@@ -2412,6 +2425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23456feb3b9ac546851683865fd370d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bc: {fileID: 684271806}
   nameUnit: 
   maxHP: 100
   currentHP: 0
