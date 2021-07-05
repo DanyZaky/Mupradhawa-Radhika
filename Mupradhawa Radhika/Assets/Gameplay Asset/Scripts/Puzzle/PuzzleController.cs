@@ -32,7 +32,7 @@ public class PuzzleController : MonoBehaviour
     void Awake()
     {
         addButton = this.GetComponent<AddButton>();
-        puzzles = Resources.LoadAll<Sprite>("game ui");
+        puzzles = Resources.LoadAll<Sprite>("chapter 1 puzzle");
     }
     void Start()
     {
@@ -109,8 +109,9 @@ public class PuzzleController : MonoBehaviour
 
     IEnumerator CheckIfPuzzleMatch()
     {
-        yield return new WaitForSeconds(.4f);
-        
+        yield return new WaitForSeconds(.5f);
+        print(firstGuessPuzzle);
+        print(secondGuessPuzzle);
         if ((buttonss[firstGuessIndex].name != buttonss[secondGuessIndex].name) && (firstGuessPuzzle == secondGuessPuzzle))
         {
             yield return new WaitForSeconds(.1f);
@@ -141,7 +142,8 @@ public class PuzzleController : MonoBehaviour
         countCoreectGuesses++;
         if (countCoreectGuesses == gameGuesses)
         {
-            bc.StartPlayerAttack();
+            StartCoroutine(bc.PlayerAttack());
+            Debug.Log(countGuesses);
         }
     }
 
