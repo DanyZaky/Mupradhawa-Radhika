@@ -32,7 +32,7 @@ public class PuzzleController : MonoBehaviour
     void Awake()
     {
         addButton = this.GetComponent<AddButton>();
-        puzzles = Resources.LoadAll<Sprite>("game ui");
+        puzzles = Resources.LoadAll<Sprite>("chapter 1 puzzle");
     }
     void Start()
     {
