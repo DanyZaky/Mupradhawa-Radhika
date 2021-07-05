@@ -12,6 +12,9 @@ public class CoolDownBar : MonoBehaviour
     private bool stopTimer = true;
     private bool isEnemyAttack = false;
 
+    public Gradient gradient;
+    public Image fill;
+
     private void Awake()
     {
         bc = GetComponent<BattleController>();
@@ -23,11 +26,14 @@ public class CoolDownBar : MonoBehaviour
         isEnemyAttack = false;
         timerSlider.maxValue = gameTime;
         timerSlider.value = gameTime;
+
+        fill.color = gradient.Evaluate(1f);
     }
 
     public void StartEnemyAttack()
     {
         StartCoroutine(bc.EnemyAttack());
+        fill.color = gradient.Evaluate(timerSlider.normalizedValue);
     }
 
     void Update()
